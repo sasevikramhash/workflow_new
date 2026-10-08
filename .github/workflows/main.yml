@@ -1,0 +1,20 @@
+name: workflow_new
+on: 
+  push:
+    branches: main
+jobs:
+  real:
+    runs-on: ubuntu-latest
+    steps:
+      - name: actions_checkout
+        uses: actions/checkout@v4
+      - name: check_file
+        run: ls
+      - name: check html file
+        run: test -f index.html
+      - name: check css file
+        run: test -f style.css
+      - name: run_sucess_msg
+        run: echo "Sucess_workflow_ready"
+
+        
